@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_hr_attendance_update" model="ir.ui.view">
+		<field name="name">hr.attendance.update.form</field>
+		<field name="model">hr.attendance.update</field>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+			<form string="Idea Cleanup Wizard">
+				<group colspan="4">
+					<button string="Cancel" special="cancel" icon="gtk-cancel"/>
+					<button string="Update" name="update" type="object" icon="gtk-ok"/>
+				</group>
+			</form>
+		</field>
+	</record>
+
+	<record id="action_hr_attendance_update_wizard" model="ir.actions.act_window">
+		<field name="name">Update</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">hr.attendance.update</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">form</field>
+                <field name="view_id" ref="view_hr_attendance_update"/>
+		<field name="target">new</field>
+	</record>
+        <menuitem action="action_hr_attendance_update_wizard" id="menu_hr_attendance_update"
+            parent="menu_hr_attendance" sequence="4"/>
+    </data>
+</openerp>
